@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7d48c5bf01.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="" class="logo" alt="">
+                <ul id="sidemenu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                    <i class=" fas fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class=" fas fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <!-- <p>Web Developer</p> -->
+                <h1>Hi,I'm <span>SHRADDHA PV</span></h1>
+            </div>
+        </div>  
+    </div>
+
+
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="C:\Users\shraddha rajesh\Desktop\portfolio shraddha\images\WhatsApp Image 2024-07-11 at 7.00.57 PM.jpeg" alt=""  srcset="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>MCA graduate with a strong interest in software development, Effective team player with excellent time
+                        management skills. Committed to continuous learning and staying updated with industry trends. Seeking
+                        opportunities to contribute to web development projects and deliver high-quality solutions</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                            <p class="tab-links active-link" onclick="opentab('certificates')">Certificates</p>
+                        </div>
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>HTML</span></li>
+                                    <li><span>CSS</span></li>
+                                    <li><span>VB.NET</span></li>
+                                    <li><span>Python</span></li>
+                                    <li><span>C Programming</span></li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>Master of Computer Application(2023-2025)</span><br>ST Joseph Engineering College <br>Vamanjoor, Manglore</li>
+                                    <li><span>Bachelor of Computer Application(2020-2023)</span><br>Shri Dharmasthala Manjunatheshwara College of Business Management <br>Mangalore</li>
+                                    <li><span>PUC (2018-20)</span><br>St.Aloysius Pre-University College<br>Mangalore</li>
+                                    <li><span>SSLC (2017-18)</span><br>St.Gerosa High School<br>Mangalore</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="projects">
+                                <ul>
+                                    <li><span><b>Grocery Shop Management System</b></span></span></li></span>Allows tracking of supplier and customer management , efficiently records the ordered products. Languages used : HTML,CSS,Php,MySQL,XAMPP</li>
+                                    
+                                    <li><span><b>Implementation of Government Ration Card System</b></span><br>Provides data security ,allows status tracking , website created using VB.NET,SQL database</li> 
+                                       
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="certificates">
+                                <ul>
+                                 <li>A course of <b><span>block chain technology</b></span> for 6 months</li>
+                                </ul>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <a href="c:\Users\shraddha rajesh\Desktop\portfolio shraddha\images\SHRADDHA P.V 2.pdf" download class="btn ">Download CV</a>
+    </div>
+
+<!-- -contact -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p> <a href="mailto:shraddhapv572@gmail.com" style="text-decoration: none; color: aliceblue;"><i class="fa-regular fa-envelope"></i>shraddhapv572@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i>8747984987</p>
+                    <div class="social-icons">
+                       
+                       
+                        <a href="http://www.linkedin.com/in/shraddha-pv-8b29572b4"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/ShraddhaPV"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    
+            </div>
+            <div class="contact-right">
+                <form action="" name="submit-to-google-sheet">
+                    <input type="text" name="name" id="" placeholder="Enter Your Name" required>
+                    <input type="email" name="email" id="" placeholder="Enter The Email" required>
+                    <textarea name="message" id="" rows="6" placeholder="Enter The Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right">
+        <p>Copyright &copy; Shraddha</p>
+    </div>
+</div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents =document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of  tablinks){
+                tablink.classList.remove("active-link")
+            }
+        
+        
+            for(tabcontent of  tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        var sidemenu=document.getElementById("sidemenu");
+        function openmenu()
+        {
+            sidemenu.style.right="0";
+        }
+        function closemenu()
+        {
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    
+      
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyIy2xZhc8D5JdLO7o2QkHOoSVqSOdy2x_xByXJeU9iQt2-OyDCXsQfPzj7Ggy2FiKv/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message Send Successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                    },4000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
